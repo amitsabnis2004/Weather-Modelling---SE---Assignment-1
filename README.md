@@ -1,4 +1,5 @@
 #Software Engineering Assignment 1
+
 **Aim:** implement weather modeling* using the quadratic solution in stages: 
   1. hard-coding variables
   2. keyboard input
