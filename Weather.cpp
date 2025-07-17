@@ -28,13 +28,14 @@ int main() {
     double endTime; // End time in hours
     double step; // Step size in hours
 
-    // Get user input for start time, end time, and step size
-    cout << "Enter start time (hours): ";
-    cin >> startTime;
-    cout << "Enter end time (hours): ";
-    cin >> endTime;
-    cout << "Enter step size (hours): ";
-    cin >> step;
+    // Read start time, end time, and step size from a file
+    ifstream inputFile("Weather.txt");
+    if (!inputFile) {
+        cerr << "Error: could not open Weather.txt for reading\n";
+        return 1;
+    }
+    inputFile >> startTime >> endTime >> step;
+    inputFile.close();
 
     simulateWeather(startTime, endTime, step);
     return 0;
