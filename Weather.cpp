@@ -24,9 +24,17 @@ void simulateWeather(double startTime, double endTime, double step) {
 }
 // Main function to run the weather simulation
 int main() {
-    double startTime = 0.0; // Start time in hours
-    double endTime = 24.0; // End time in hours
-    double step = 1.0; // Step size in hours
+    double startTime; // Start time in hours
+    double endTime; // End time in hours
+    double step; // Step size in hours
+
+    // Get user input for start time, end time, and step size
+    cout << "Enter start time (hours): ";
+    cin >> startTime;
+    cout << "Enter end time (hours): ";
+    cin >> endTime;
+    cout << "Enter step size (hours): ";
+    cin >> step;
 
     simulateWeather(startTime, endTime, step);
     return 0;
