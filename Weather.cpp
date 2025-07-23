@@ -25,17 +25,15 @@ void simulateWeather(double startTime, double endTime, double step) {
 // Main function to run the weather simulation
 int main() {
     double startTime; // Start time in hours
-    double endTime; // End time in hours
-    double step; // Step size in hours
+    double endTime;   // End time in hours
+    double step;      // Step size in hours
 
-    // Read start time, end time, and step size from a file
-    ifstream inputFile("Weather.txt");
-    if (!inputFile) {
-        cerr << "Error: could not open Weather.txt for reading\n";
+    // Read a single set of start time, end time, and step size from stdin
+    cout << "Enter start time, end time, and step size: ";
+    if (!(cin >> startTime >> endTime >> step)) {
+        cerr << "Error: invalid input\n";
         return 1;
     }
-    inputFile >> startTime >> endTime >> step;
-    inputFile.close();
 
     simulateWeather(startTime, endTime, step);
     return 0;
