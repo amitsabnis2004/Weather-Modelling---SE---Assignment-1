@@ -21,20 +21,19 @@ void simulateWeather(double startTime, double endTime, double step) {
         double temperature = weather.calculateTemperature(t);
         cout << "Time: " << t << " Temperature: " << temperature << endl;
     }
-}
-// Main function to run the weather simulation
+};
+
+// Main function to run the weather simulation for multiple input sets
 int main() {
     double startTime; // Start time in hours
     double endTime;   // End time in hours
     double step;      // Step size in hours
 
-    // Read a single set of start time, end time, and step size from stdin
-    cout << "Enter start time, end time, and step size: ";
-    if (!(cin >> startTime >> endTime >> step)) {
-        cerr << "Error: invalid input\n";
-        return 1;
-    }
+        cout << "Enter start time, end time, and step size (Ctrl+D to end):\n";
+        while (cin >> startTime >> endTime >> step) {
+            simulateWeather(startTime, endTime, step);
+            cout << '\n';
+        }
 
-    simulateWeather(startTime, endTime, step);
     return 0;
 }
